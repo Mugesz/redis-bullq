@@ -8,17 +8,17 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-// Connect to MongoDB
+
 mongoose.connect('mongodb://localhost:27017/excelData');
 
-// Define MongoDB schema and model
+
 const excelDataSchema = new mongoose.Schema({
     
 });
 
 const ExcelData = mongoose.model('ExcelData', excelDataSchema);
 
-// Route for uploading Excel file
+
 app.post('/upload', async (req, res) => {
     try {
         const base64Data = req.body.file;
@@ -35,7 +35,7 @@ app.post('/upload', async (req, res) => {
     }
 });
 
-// Start the server
+
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
 });
